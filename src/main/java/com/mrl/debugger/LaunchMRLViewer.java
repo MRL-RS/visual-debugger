@@ -1,7 +1,6 @@
 package com.mrl.debugger;
 
 
-import com.mrl.debugger.remote.DefaultViewerGateway;
 import com.mrl.debugger.remote.ViewerGateway;
 import rescuecore2.Constants;
 import rescuecore2.components.ComponentConnectionException;
