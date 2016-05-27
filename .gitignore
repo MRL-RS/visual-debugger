@@ -1,0 +1,5 @@
+/target/
+/test-results/
+/.idea/
+*.iml
+/classes/

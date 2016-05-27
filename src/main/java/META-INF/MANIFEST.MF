@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Class-Path: javassist-3.19.0-GA.jar sample-2.0.jar slf4j-api-1.7.12.ja
+ r reflections-0.9.10.jar clear-2.0.jar log4j-1.2.17.jar collapse-2.0.
+ jar javaGeom-0.11.1.jar handy-2.0.jar slf4j-log4j12-1.7.12.jar misc-2
+ .0.jar resq-fire-2.0.jar rescuecore2-2.0.jar standard-2.0.jar human-2
+ .0.jar maps-2.0.jar kernel-2.0.jar guava-15.0.jar annotations-2.0.1.j
+ ar traffic3-2.0.jar uncommons-maths-1.2.1.jar gis2-2.0.jar ignition-2
+ .0.jar
+Main-Class: com.mrl.debugger.LaunchMRLViewer
+
