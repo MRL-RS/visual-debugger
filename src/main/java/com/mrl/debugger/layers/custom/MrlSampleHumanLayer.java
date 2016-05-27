@@ -16,15 +16,6 @@ import java.awt.*;
 public class MrlSampleHumanLayer extends MrlStandardHumanLayer {
 
     @Override
-    public void bind(EntityID id, int key, Object... params) {
-        super.bind(id, key, params);
-    }
-
-    @Override
-    protected void paintShape(Human h, Shape shape, Graphics2D g) {
-    }
-
-    @Override
     protected void paintData(Human h, Shape shape, Graphics2D g, ScreenTransform t) {
         g.setColor(Color.MAGENTA.darker());
         Circle2D circle2D = new Circle2D(t.xToScreen(h.getX()), t.yToScreen(h.getY()), 18d, true);

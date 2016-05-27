@@ -41,7 +41,7 @@ public abstract class MrlBaseAreaLayer<E extends Area> extends StandardEntityVie
         super(clazz);
         ViewLayer annotation = this.getClass().getAnnotation(ViewLayer.class);
         if (annotation != null) {
-            drawOverAllData = annotation.drawOverAllData();
+            drawOverAllData = annotation.drawAllData();
         }
     }
 

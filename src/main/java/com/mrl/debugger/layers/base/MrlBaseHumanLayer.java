@@ -44,7 +44,7 @@ public class MrlBaseHumanLayer extends StandardEntityViewLayer<Human> implements
         super(Human.class);
         ViewLayer annotation = this.getClass().getAnnotation(ViewLayer.class);
         if (annotation != null) {
-            drawOverAllData = annotation.drawOverAllData();
+            drawOverAllData = annotation.drawAllData();
         }
     }
 

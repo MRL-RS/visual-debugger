@@ -21,7 +21,14 @@ public class DefaultViewerGateway implements ViewerGateway {
     public DefaultViewerGateway(MrlViewer mrlViewer) {
         this.layerMap = new HashMap();
         for (ViewLayer viewLayer : mrlViewer.getViewerPanel().getLayers()) {
-            this.layerMap.put(viewLayer.getClass().getSimpleName(), viewLayer);
+            com.mrl.debugger.ViewLayer annotation = viewLayer.getClass().getAnnotation(com.mrl.debugger.ViewLayer.class);
+            String name;
+            if (annotation.tag().isEmpty()) {
+                name = viewLayer.getClass().getSimpleName();
+            } else {
+                name = annotation.tag();
+            }
+            this.layerMap.put(name, viewLayer);
         }
 
     }

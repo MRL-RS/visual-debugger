@@ -14,30 +14,30 @@ import java.util.List;
 /**
  * @author Mahdi
  */
-public abstract class MrlBaseShapeLayer extends StandardViewLayer implements MrlBaseLayer {
+public abstract class MrlBaseShapeLayer<T extends Shape> extends StandardViewLayer implements MrlBaseLayer {
 
     private static final Stroke STROKE_DEFAULT = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER);
     private boolean drawOverAllData = false;
 
-    protected Map<EntityID, List<Polygon>> agentPolygonsMap = new HashMap<>();
-    private Set<Polygon> overallPolygons = new HashSet<>();
+    protected Map<EntityID, List<T>> agentShapesMap = new HashMap<>();
+    private Set<T> overallShapes = new HashSet<>();
 
     public MrlBaseShapeLayer() {
         ViewLayer annotation = this.getClass().getAnnotation(ViewLayer.class);
         if (annotation != null) {
-            drawOverAllData = annotation.drawOverAllData();
+            drawOverAllData = annotation.drawAllData();
         }
     }
 
     @Override
     public void bind(EntityID id, int key, Object... params) {
         if (key == 0) {
-            java.util.List<Polygon> data = (List<Polygon>) params[0];
-            agentPolygonsMap.put(id, data);
+            java.util.List<T> data = (List<T>) params[0];
+            agentShapesMap.put(id, data);
             if (drawOverAllData) {
-                overallPolygons.clear();
-                for (java.util.List<Polygon> agentData : agentPolygonsMap.values()) {
-                    overallPolygons.addAll(agentData);
+                overallShapes.clear();
+                for (java.util.List<T> agentData : agentShapesMap.values()) {
+                    overallShapes.addAll(agentData);
                 }
             }
         }
@@ -49,36 +49,25 @@ public abstract class MrlBaseShapeLayer extends StandardViewLayer implements Mrl
 
         g.setStroke(STROKE_DEFAULT);
         if (drawOverAllData
-                && (StaticViewProperties.selectedObject == null || !agentPolygonsMap.containsKey(StaticViewProperties.selectedObject.getID()))) {
-            for (Polygon p : overallPolygons) {
-                paintPolygon(transform(p, t), g);
+                && (StaticViewProperties.selectedObject == null || !agentShapesMap.containsKey(StaticViewProperties.selectedObject.getID()))) {
+            for (T p : overallShapes) {
+                paintShape(transform(p, t), g);
             }
         } else if (StaticViewProperties.selectedObject != null
-                && agentPolygonsMap.containsKey(StaticViewProperties.selectedObject.getID())) {
-            List<Polygon> polygons = agentPolygonsMap.get(StaticViewProperties.selectedObject.getID());
-            for (Polygon p : polygons) {
-                paintPolygon(transform(p, t), g);
+                && agentShapesMap.containsKey(StaticViewProperties.selectedObject.getID())) {
+            List<T> polygons = agentShapesMap.get(StaticViewProperties.selectedObject.getID());
+            for (T p : polygons) {
+                paintShape(transform(p, t), g);
             }
         }
-
 
         return new ArrayList<>();
     }
 
-    protected Polygon transform(Polygon p, ScreenTransform t) {
-        int count = p.npoints;
-        int[] xs = new int[count];
-        int[] ys = new int[count];
-        for (int i = 0; i < count; i++) {
-            xs[i] = t.xToScreen(p.xpoints[i]);
-            ys[i] = t.yToScreen(p.ypoints[i]);
-        }
-        return new Polygon(xs, ys, count);
-    }
 
-    protected void paintPolygon(Polygon p, Graphics2D g) {
+    protected abstract T transform(T p, ScreenTransform t);
 
-    }
+    protected abstract void paintShape(T p, Graphics2D g);
 
     @Override
     public String getName() {

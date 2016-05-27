@@ -15,5 +15,7 @@ public @interface ViewLayer {
 
     String caption() default "";
 
-    boolean drawOverAllData() default false;
+    String tag() default "";
+
+    boolean drawAllData() default false;
 }

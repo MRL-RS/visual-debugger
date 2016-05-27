@@ -40,7 +40,7 @@ public class MrlBaseBlockadeLayer extends StandardEntityViewLayer<Blockade> impl
         super(Blockade.class);
         ViewLayer annotation = this.getClass().getAnnotation(ViewLayer.class);
         if (annotation != null) {
-            drawOverAllData = annotation.drawOverAllData();
+            drawOverAllData = annotation.drawAllData();
         }
     }
 

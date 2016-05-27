@@ -14,18 +14,6 @@ import java.awt.*;
 @ViewLayer(visible = false, caption = "Sample buildings")
 public class MrlSampleBuildingsLayer extends MrlStandardBuildingLayer {
 
-
-    @Override
-    public void bind(EntityID id, int key, Object... params) {
-        super.bind(id, key, params);
-    }
-
-    @Override
-    public Shape render(Building area, Graphics2D g, ScreenTransform t) {
-        super.render(area, g, t);
-        return null;
-    }
-
     @Override
     protected void paintData(Building area, Polygon p, Graphics2D g) {
         g.setColor(Color.CYAN);
