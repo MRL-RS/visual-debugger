@@ -1,10 +1,14 @@
 Manifest-Version: 1.0
-Class-Path: javassist-3.19.0-GA.jar sample-2.0.jar slf4j-api-1.7.12.ja
- r reflections-0.9.10.jar clear-2.0.jar log4j-1.2.17.jar collapse-2.0.
- jar javaGeom-0.11.1.jar handy-2.0.jar slf4j-log4j12-1.7.12.jar misc-2
- .0.jar resq-fire-2.0.jar rescuecore2-2.0.jar standard-2.0.jar human-2
- .0.jar maps-2.0.jar kernel-2.0.jar guava-15.0.jar annotations-2.0.1.j
- ar traffic3-2.0.jar uncommons-maths-1.2.1.jar gis2-2.0.jar ignition-2
- .0.jar
+Class-Path: guava-15.0.jar slf4j-api-1.7.12.jar handy-2.0.jar dom4j.ja
+ r jts-1.11.jar RNAViewR.jar junit-4.5.jar resq-fire.jar xml-0.0.6.jar
+  rescuecore.jar jaxen-1.1.1.jar jsi-1.0b2p1.jar trove-0.1.8.jar jscie
+ nce-4.3.jar log4j-1.2.15.jar javaGeom-0.9.0.jar jcommon-1.0.16.jar jf
+ reechart-1.0.13.jar uncommons-maths-1.2.jar commons-logging-1.1.1.jar
+  maps-2.0.jar uncommons-maths-1.2.1.jar clear-2.0.jar gis2-2.0.jar sl
+ f4j-log4j12-1.7.12.jar javassist-3.19.0-GA.jar standard-2.0.jar refle
+ ctions-0.9.10.jar sample-2.0.jar resq-fire-2.0.jar collapse-2.0.jar r
+ escuecore2-2.0.jar annotations-2.0.1.jar human-2.0.jar kernel-2.0.jar
+  javaGeom-0.11.1.jar log4j-1.2.17.jar ignition-2.0.jar misc-2.0.jar t
+ raffic3-2.0.jar
 Main-Class: com.mrl.debugger.LaunchMRLViewer
 
