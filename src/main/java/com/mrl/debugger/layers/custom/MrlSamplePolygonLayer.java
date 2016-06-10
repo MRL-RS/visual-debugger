@@ -8,7 +8,7 @@ import java.awt.*;
 /**
  * @author Mahdi
  */
-@ViewLayer(visible = false, caption = "Sample Partitions", drawAllData = false)
+@ViewLayer(visible = false, caption = "Sample polygons",tag = "SamplePolygon", drawAllData = false)
 public class MrlSamplePolygonLayer extends MrlBasePolygonLayer {
 
     @Override

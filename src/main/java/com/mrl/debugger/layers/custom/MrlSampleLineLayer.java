@@ -9,7 +9,7 @@ import java.awt.geom.Line2D;
 /**
  * @author Mahdi
  */
-@ViewLayer(visible = false, tag = "SampleLine", caption = "Sample Lines", drawAllData = true)
+@ViewLayer(visible = false, tag = "SampleLine", caption = "Sample lines", drawAllData = true)
 public class MrlSampleLineLayer extends MrlBaselineLayer {
 
     @Override

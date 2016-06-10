@@ -13,7 +13,7 @@ import java.awt.*;
  * @author Mahdi
  */
 @ViewLayer(visible = false, caption = "Sample humans")
-public class MrlSampleHumanLayer extends MrlStandardHumanLayer {
+public class MrlSampleHumansLayer extends MrlStandardHumanLayer {
 
     @Override
     protected void paintData(Human h, Shape shape, Graphics2D g, ScreenTransform t) {

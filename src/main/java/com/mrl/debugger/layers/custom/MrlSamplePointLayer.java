@@ -10,7 +10,7 @@ import java.awt.*;
  *
  * @author Pooya Deldar Gohardani
  */
-@ViewLayer(caption = "Sample Points", tag = "SamplePoint",drawAllData = true)
+@ViewLayer(caption = "Sample points", tag = "SamplePoint",drawAllData = true)
 public class MrlSamplePointLayer extends MrlBasePointLayer {
 
     @Override

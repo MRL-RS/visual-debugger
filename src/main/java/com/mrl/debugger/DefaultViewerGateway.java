@@ -1,6 +1,5 @@
 package com.mrl.debugger;
 
-import com.mrl.debugger.MrlViewer;
 import com.mrl.debugger.layers.base.MrlBaseLayer;
 import com.mrl.debugger.remote.ViewerGateway;
 import rescuecore2.view.ViewLayer;
