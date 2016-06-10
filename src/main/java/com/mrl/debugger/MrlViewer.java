@@ -538,6 +538,7 @@ public class MrlViewer extends StandardViewer{
         centerPanel.setDividerLocation(0.99);
 
         JFrame frame = new JFrame("Viewer " + getViewerID() + " (" + model.getAllEntities().size() + " entities)");
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         frame.add(topPanel, BorderLayout.NORTH);
         frame.add(centerPanel, BorderLayout.CENTER);
