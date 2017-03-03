@@ -1,9 +1,6 @@
 package com.mrl.debugger;
 
-import com.mrl.debugger.layers.base.MrlBaseBlockadeLayer;
-import com.mrl.debugger.layers.base.MrlBaseBuildingLayer;
-import com.mrl.debugger.layers.base.MrlBaseHumanInfoLayer;
-import com.mrl.debugger.layers.base.MrlBaseRoadLayer;
+import com.mrl.debugger.layers.base.*;
 
 /**
  * Created by Mostafa Shabani.
@@ -28,6 +25,7 @@ public class MrlStandardWorldModelViewer extends MrlLayerViewComponent {
 
     protected void addTopLayers() {
         addLayer(new MrlBaseHumanInfoLayer());
+        addLayer(new MrlCommandLayer());
 
     }
 
