@@ -26,6 +26,7 @@ public class MrlStandardWorldModelViewer extends MrlLayerViewComponent {
     protected void addTopLayers() {
         addLayer(new MrlBaseHumanInfoLayer());
         addLayer(new MrlCommandLayer());
+        addLayer(new MrlLocationLayer());
 
     }
 

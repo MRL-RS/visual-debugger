@@ -1,5 +1,7 @@
 package com.mrl.debugger.layers.base;
 
+import com.mrl.debugger.ViewLayer;
+import math.geom2d.conic.Circle2D;
 import rescuecore2.config.Config;
 import rescuecore2.misc.Pair;
 import rescuecore2.misc.gui.ScreenTransform;
@@ -14,6 +16,7 @@ import java.util.Collection;
 /**
  *
  */
+@ViewLayer(caption = "Location", visible = true)
 public class MrlLocationLayer extends StandardViewLayer {
     private boolean visible = true;
     public static Pair<Integer, Integer> xy;
@@ -42,6 +45,9 @@ public class MrlLocationLayer extends StandardViewLayer {
             int y = t.yToScreen(xy.second());
             g.setColor(valueColor);
             g.drawOval(x - radius, y - radius, radius << 1, radius << 1);
+
+            Circle2D circle2D = new Circle2D(t.xToScreen(xy.first()), t.yToScreen(xy.second()), 3d, true);
+            circle2D.draw(g);
         }
         return new ArrayList<RenderedObject>();
     }
