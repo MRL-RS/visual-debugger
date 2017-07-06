@@ -1,6 +1,7 @@
 package com.mrl.debugger;
 
 import com.mrl.debugger.layers.base.*;
+import rescuecore2.standard.view.PositionHistoryLayer;
 
 /**
  * Created by Mostafa Shabani.
@@ -27,6 +28,7 @@ public class MrlStandardWorldModelViewer extends MrlLayerViewComponent {
         addLayer(new MrlBaseHumanInfoLayer());
         addLayer(new MrlCommandLayer());
         addLayer(new MrlLocationLayer());
+        addLayer(new PositionHistoryLayer());
 
     }
 
