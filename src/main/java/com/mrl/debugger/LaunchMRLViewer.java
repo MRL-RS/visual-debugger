@@ -81,7 +81,7 @@ public final class LaunchMRLViewer {
     }
 
 
-    private static void listenToAgents(MrlViewer mrlViewer) throws RemoteException, AlreadyBoundException {
+    public static void listenToAgents(MrlViewer mrlViewer) throws RemoteException, AlreadyBoundException {
         ViewerGateway gateway = new DefaultViewerGateway(mrlViewer);
         ViewerGateway stub = (ViewerGateway) UnicastRemoteObject.exportObject(gateway, 0);
 
